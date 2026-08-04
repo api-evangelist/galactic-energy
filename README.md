@@ -42,5 +42,9 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Galactic Energy is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
+Galactic Energy (星河动力航天 — Galactic Energy (Beijing) Space Technology Co., Ltd.) is a private Chinese commercial launch company founded on 6 February 2018 and headquartered in Beijing E-Town. It flies the Ceres family of solid-propellant small-lift rockets (Ceres-1, the sea-launched Ceres-1S, and the larger Ceres-2) and is developing the partly reusable liquid oxygen/kerosene Pallas-1 and Pallas-2 medium-lift vehicles, the Eros vehicle, the Welkin (苍穹) CQ-series engines and the Edge attitude and orbital control system.
+
+**No public API.** Contract discovery on 2026-08-04 found no developer portal, no API documentation and no machine-readable API description on any Galactic Energy host. Probes for OpenAPI/Swagger, GraphQL introspection, an MCP server, an A2A agent card, `/llms.txt`, `/robots.txt` and the full `/.well-known/` set all returned HTTP 404 on `www.galactic-energy.cn` and `galactic-energy.cn`, and no `api.`, `developer.` or `docs.` subdomain resolves. The full probe record is in [`well-known/galactic-energy-well-known.yml`](well-known/galactic-energy-well-known.yml). This profile is identity and domain-security only.
+
+- https://www.galactic-energy.cn/
 - https://www.hiive.com/securities/galactic-energy-stock

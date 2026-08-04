@@ -1,0 +1,77 @@
+generated: '2026-08-04'
+method: probed
+source: live probes of /.well-known/* and agent-discovery paths on every Galactic Energy host
+notes: >-
+  Galactic Energy publishes a single public host, www.galactic-energy.cn (the apex
+  galactic-energy.cn resolves to the same nginx origin and behaves identically). No
+  api., developer. or docs. subdomain resolves at all — DNS returns no answer, so
+  there is no second host to probe. Every /.well-known/ path, plus /security.txt,
+  /llms.txt, /robots.txt, /openapi.json, /swagger.json, /graphql, /asyncapi.yaml and
+  /apis.json, returns the origin's generic nginx HTTP 404 page. Nothing here is a
+  bot wall or a JS shell: the 404s are real absences, recorded so a later round does
+  not have to re-probe. No RFC 9116 security.txt, no OIDC/OAuth 2.0 authorization-server
+  metadata, no RFC 9727 api-catalog, no ai-plugin.json and no A2A agent card exists on
+  any Galactic Energy host, at either the canonical /.well-known/agent-card.json path
+  or the pre-0.3 /.well-known/agent.json path. Because nothing was found, this file
+  carries NO apis.yml pointer — it is a record of the probe, not a discovery surface.
+hosts:
+- host: https://www.galactic-energy.cn
+  platform: nginx
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/mcp.json, status: 404}
+  - {path: /security.txt, status: 404}
+  - {path: /llms.txt, status: 404}
+  - {path: /robots.txt, status: 404}
+- host: https://galactic-energy.cn
+  platform: nginx
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/mcp.json, status: 404}
+  - {path: /llms.txt, status: 404}
+  - {path: /robots.txt, status: 404}
+contract_discovery:
+  openapi:
+    result: none
+    probed:
+    - {url: 'https://www.galactic-energy.cn/openapi.json', status: 404}
+    - {url: 'https://www.galactic-energy.cn/openapi.yaml', status: 404}
+    - {url: 'https://www.galactic-energy.cn/swagger.json', status: 404}
+    - {url: 'https://www.galactic-energy.cn/v1/openapi.json', status: 404}
+    - {url: 'https://www.galactic-energy.cn/api-docs', status: 404}
+    - {url: 'https://www.galactic-energy.cn/docs', status: 404}
+    - {url: 'https://www.galactic-energy.cn/redoc', status: 404}
+  graphql:
+    result: none
+    probed:
+    - {url: 'https://www.galactic-energy.cn/graphql', status: 404}
+  mcp:
+    result: none
+    note: no MCP endpoint is advertised anywhere on the site and no mcp host resolves
+  agent_card:
+    result: none
+    note: both /.well-known/agent-card.json and the legacy /.well-known/agent.json return
+      404 on both hosts; per the pipeline contract NO a2a/ artifact was authored
+  subdomains:
+    - {host: api.galactic-energy.cn, resolves: false}
+    - {host: developer.galactic-energy.cn, resolves: false}
+    - {host: docs.galactic-energy.cn, resolves: false}
+  conclusion: >-
+    Galactic Energy has no public machine-readable API contract of any kind. Its
+    developer-facing surface is a Chinese-language document centre of launch-vehicle
+    user manuals in PDF and an HTML launch-reservation form. This is a launch-services
+    manufacturer, not an API provider.
