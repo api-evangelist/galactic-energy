@@ -15,6 +15,17 @@ description: 'Galactic Energy (星河动力航天 — Galactic Energy (Beijing) 
   MCP, an A2A agent card, /llms.txt, robots.txt and the full /.well-known/ discovery
   set returned HTTP 404 on every galactic-energy.cn host, and no api./developer./docs.
   subdomain resolves. This profile is therefore identity and domain-security only.'
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://www.galactic-energy.cn/Uploads/2025-09-16/68c841b3566d2.png
 url: https://raw.githubusercontent.com/api-evangelist/galactic-energy/refs/heads/main/apis.yml
 x-type: company
